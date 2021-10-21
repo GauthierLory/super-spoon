@@ -1,11 +1,15 @@
 <?php
-use App\Controller\HelloController;
+
 use App\Http\Request;
+use App\Kernel;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$request = new Request();
+$pathInfo = $_SERVER['PATH_INFO'] ?? '/';
+$request = new Request($pathInfo, $_GET);
 
-$controller = new HelloController();
-$response = $controller->hello($request);
+$kernel = new Kernel;
+
+$response = $kernel->handle($request);
 
 $response->send();

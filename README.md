@@ -5,3 +5,7 @@ lancement des tests unitaires
 
 lancement du serveur 
 php -S localhost:8000 -t public
+
+.\vendor\bin\phpunit --generate-configuration
+
+composer dump-autoload

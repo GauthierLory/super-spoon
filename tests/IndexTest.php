@@ -9,7 +9,7 @@ class IndexTest extends TestCase {
     public function test_it_displays_name_from_get() {
         // Setup
         // http://localhost?name=Lior
-        $request = new Request([
+        $request = new Request("/",[
             'name' => 'Lior'
         ]);
 

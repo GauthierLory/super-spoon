@@ -2,12 +2,15 @@
 
 namespace App\Http;
 
-class Request {
+class Request
+{
     public array $params;
+    private string $pathInfo;
 
-    public function __construct(array $params = [])
+    public function __construct(string $pathInfo ="/" ,array $params = [])
     {
         $this->params = $params;
+        $this->pathInfo = $pathInfo;
     }
 
     public function getParams(): array
@@ -19,4 +22,13 @@ class Request {
     {
         return $this->params[$name] ?? null;
     }
+
+    /**
+     * @return string
+     */
+    public function getPathInfo(): string
+    {
+        return $this->pathInfo;
+    }
+
 }

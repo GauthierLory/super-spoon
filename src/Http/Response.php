@@ -44,7 +44,7 @@ class Response
         $this->headers[$header] = $value;
     }
 
-    public function getHeader(string $header): string {
+    public function getHeader(string $header): ?string {
         return $this->headers[$header] ?? null;
     }
 
